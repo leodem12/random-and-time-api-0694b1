@@ -1,0 +1,10 @@
+# written by the SDLC GitLab projection
+.env
+*.log
+bin/
+obj/
+node_modules/
+.angular/
+dist/
+server_out*.txt
+server_err*.txt

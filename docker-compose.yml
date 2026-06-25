@@ -1,0 +1,24 @@
+name: sdlc-20260622-214204-0694b1
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: timedb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      retries: 10
+
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__Default=Host=db;Port=5432;Database=timedb;Username=postgres;Password=password

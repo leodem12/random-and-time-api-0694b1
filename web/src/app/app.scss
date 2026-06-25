@@ -1,0 +1,25 @@
+.container {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.result-card {
+  margin-bottom: 16px;
+}
+
+.error-card {
+  margin-bottom: 16px;
+  border-left: 4px solid #f44336;
+
+  p {
+    color: #f44336;
+  }
+}
